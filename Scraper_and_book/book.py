@@ -6,7 +6,7 @@ def read_book():
     with open('book.txt', 'r') as b:
         for line in b:
             for word in line.split():
-                print word
+                print(word)
                 check(word)
 
 
@@ -20,7 +20,7 @@ def check(word):
                 if word == words[num]:
                     with open('ans.txt', 'a') as a:
                         for i in range(6):
-                            print words[i]
+                            print(words[i])
                             a.write(words[i] + ' ')
                         print >> a
                     return

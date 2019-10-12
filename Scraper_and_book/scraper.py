@@ -1,6 +1,6 @@
 import requests
 import time
-import urlparse
+import urllib.parse
 import string
 import re
 from bs4 import BeautifulSoup
@@ -61,7 +61,7 @@ def scrape(url, prev_w):
             else:
                 prev_w = verb
             temp = '?lemma=' + verb.upper() + '100'
-            v_url = urlparse.urljoin(m_url, temp)  # create sub link
+            v_url = urllib.parse.urljoin(m_url, temp)  # create sub link
             # error hangling if no conjugate verbs
             conjugated_verbs = get_verb_conj(v_url, url)
             if conjugated_verbs:
@@ -77,7 +77,7 @@ def scrape(url, prev_w):
     for p in pag:
         if p.get_text() == 'Pagina successiva':
             temp = p.find('a')['href']
-    new_url = urlparse.urljoin(url, temp)
+    new_url = urllib.parse.urljoin(url, temp)
     time.sleep(5)
     scrape(new_url, prev_w)
 
