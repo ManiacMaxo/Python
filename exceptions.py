@@ -29,5 +29,6 @@ for num in range(0, 12):
     # try:
     #     s.get_name(num)
     # except InvalidNumberException:
+    #    print('Number out of range')
     if s.get_name(num) == 'Error':
         print('Number out of range')
