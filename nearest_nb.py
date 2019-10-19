@@ -36,7 +36,7 @@ def main():
     # dimensions = int(input('dimensions: '))
     tof = [True, False]
     dataset = []
-    for i in range(10):
+    for _ in range(10):
         coords = []
         for j in range(D):  # x, y, z... n-dimensions
             coords.append(random.uniform(1, 50))
