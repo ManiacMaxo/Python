@@ -38,7 +38,7 @@ def main():
     dataset = []
     for _ in range(10):
         coords = []
-        for j in range(D):  # x, y, z... n-dimensions
+        for _ in range(D):  # x, y, z... n-dimensions
             coords.append(random.uniform(1, 50))
         dataset.append(Point(coords, tof[random.randint(0, 1)]))
 
