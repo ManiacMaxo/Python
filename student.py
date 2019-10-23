@@ -41,7 +41,7 @@ def input_grade(student):
     return int(grade)
 
 
-def main():
+if __name__ == '__main__':
     name = input('Name of student: ').title()
     num = input('Number of student: ')
 
@@ -97,6 +97,3 @@ def main():
 
         else:
             print('Unknown operation. Try again')
-
-
-main()

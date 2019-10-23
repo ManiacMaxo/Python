@@ -16,7 +16,7 @@ class Stack:
         print('Size is: ', self.size)
 
 
-def main():
+if __name__ == '__main__':
     stack = Stack()
     for i in range(10):
         stack.pusha_t(i)
@@ -24,6 +24,3 @@ def main():
     stack.poop()
     print(stack.data)
     stack.siize()
-
-
-main()

@@ -1,4 +1,4 @@
-def main():
+if __name__ == '__main__':
     register = {  # randomly genetated names
         1: 'Amiens',
         2: 'Cate',
@@ -17,6 +17,3 @@ def main():
             break
         print('Number out of range!')
     print(register[num])
-
-
-main()

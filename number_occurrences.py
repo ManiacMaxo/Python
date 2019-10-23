@@ -1,7 +1,7 @@
 import random
 
 
-def main():
+if __name__ == '__main__':
     a_len = 20
     array = []
     for i in range(a_len):
@@ -16,6 +16,3 @@ def main():
 
     for num in nums:
         print('%6d : %d' % (num, nums[num]))
-
-
-main()
