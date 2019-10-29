@@ -22,7 +22,7 @@ def distances(D, graph, new):
         dist[i] = euclidean_dist(D, graph[i], new)
 
     dist = sorted(dist.items(), key=lambda item: item[1])
-    print(dist)
+    return dist
 
 
 if __name__ == '__main__':
