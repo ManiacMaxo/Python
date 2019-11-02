@@ -4,25 +4,26 @@ from random import randint
 
 
 def dropper(floor):
-    c_floor = itter = 14
-    eggs = 2
-    for _ in range(c_floor, 101, itter):
-        if c_floor >= floor:
-            print('Egg broke on floor' + c_floor)
-            eggs -= 1
-            if eggs == 0:
-                print('Out of eggs, couldn\t flind critical floor')
-                exit()
-            for x in range(c_floor - itter + 1, c_floor):
+    incr = 13
+
+    for c_floor in range(14, 101, incr):
+
+        if c_floor >= floor:  # unsuccessful throw
+            print('Egg broke from floor', c_floor)
+
+            # search between prev and curr floor
+            for x in range(c_floor - incr, c_floor + 1):
                 if x == floor:
-                    print('Egg broken on floor', x)
-                    print('Critical floor is', x)
+                    print('Egg broke from floor %d, it is critical floor' % x)
                     exit()
-        else:
-            print('Egg didn\'t break on floor ', c_floor)
-        itter -= 1
+                elif x < floor:
+                    print('Egg didn\'t break from floor', x)
+
+        elif c_floor < floor:  # successful throw
+            print('Egg didn\'t break from floor', c_floor)
+        incr -= 1
 
 
 if __name__ == "__main__":
-    # floor = randint(0, 100)
-    dropper(15)
+    floor = randint(0, 100)
+    dropper(floor)
