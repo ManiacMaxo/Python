@@ -20,9 +20,9 @@ class Philosopher(threading.Thread):
         while(self.running):
             sleep(rand(3, 13))  # thinking
             print(Fore.YELLOW + self.name, 'is hungry.')
-            self.dine()
+            self.eat()
 
-    def dine(self):
+    def eat(self):
         fork1 = self.left_fork
         fork2 = self.right_fork
 
