@@ -1,2 +1,2 @@
-Made for Python machine learning
+Made for Python machine learning\n
 mostly for school
