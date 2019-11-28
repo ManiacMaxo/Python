@@ -7,8 +7,7 @@ from colorama import Fore
 
 
 class Philosopher(threading.Thread):
-
-    running = False
+    on_table = False
 
     def __init__(self, pname, left_fork, right_fork):
         threading.Thread.__init__(self)
@@ -17,8 +16,8 @@ class Philosopher(threading.Thread):
         self.right_fork = right_fork
 
     def run(self):
-        while(self.running):
-            sleep(rand(3, 13))  # thinking
+        while(self.on_table):
+            sleep(rand(3, 10))  # thinking
             print(Fore.YELLOW + self.name, 'is hungry.')
             self.eat()
 
@@ -26,15 +25,12 @@ class Philosopher(threading.Thread):
         fork1 = self.left_fork
         fork2 = self.right_fork
 
-        while self.running:
+        while self.on_table:
             fork1.acquire(True)
             locked = fork2.acquire(False)
             if locked:
                 break
             fork1.release()
-
-            # print(Fore.RED + self.name, 'could not eat, swaps forks')
-            # fork1, fork2 = fork2, fork1  # swap without third
         else:
             return
 
@@ -44,7 +40,7 @@ class Philosopher(threading.Thread):
 
     def dining(self):
         print(Fore.GREEN + self.name, 'is eating ')
-        sleep(rand(1, 10))
+        sleep(rand(3, 10))
         print(Fore.BLUE + self.name, 'has finished eating, now thinking.')
 
 
@@ -57,12 +53,12 @@ def DiningPhilosophers():
         philosophers.append(Philosopher(
             pnames[i], forks[i % 5], forks[(i+1) % 5]))
 
-    Philosopher.running = True
+    Philosopher.on_table = True
     seed(177013)
     for p in philosophers:
         p.start()
     sleep(100)  # runtime of the program
-    Philosopher.running = False
+    Philosopher.on_table = False
     print('Fin.')
 
 
