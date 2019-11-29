@@ -1,5 +1,9 @@
 <title>Posts</title>
-<h1>list of posts</h1><br>
+
+<a href="/posts/new">New post</a>
+
+<h1>Posts</h1><br>
 {% for post in posts %} 
-{{post[0]}} | {{post[1]}}</br>
+<a href="/posts/{{ post.id }}"><b>Name:</b> {{ post.name }} | Author: {{ post.author }}</a>
+<br/>
 {%endfor%}
