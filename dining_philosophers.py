@@ -3,7 +3,7 @@ from random import uniform as rand, seed
 from time import sleep
 from colorama import Fore
 
-'''thecnically should be chopsticks not forks buuuut...'''
+'''technically should be chopsticks not forks buuuut...'''
 
 
 class Philosopher(threading.Thread):
