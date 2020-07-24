@@ -21,7 +21,7 @@ def remove_duplicates(cards) -> str:
         rm.extend(v[1:])
 
     # rm = sorted(rm)
-    rm = ', '.join(rm)
+    rm = ' '.join(rm)
 
     return f'-card sell {rm}'
 
