@@ -19,4 +19,4 @@ for i in range(int(side/(2*step))):
     t.forward(step)
     t.right(90)
     t.down()
-    side-=2*step
+    side -= 2*step

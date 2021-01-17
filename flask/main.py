@@ -1,5 +1,4 @@
-from flask import Flask
-from flask import render_template, request, redirect, url_for
+from flask import Flask, redirect, render_template, request, url_for
 from post import Post
 
 app = Flask(__name__)
@@ -30,6 +29,12 @@ def new_post():
     elif request.method == 'POST':
         next_id = max(db.keys()) + 1
         post = Post(
-            next_id, request.form['name'], request.form['author'], request.form['content'])
+            next_id,
+            request.form['name'],
+            request.form['author'],
+            request.form['content']
+        )
         db[next_id] = post
         return redirect(url_for('list_posts'))
+
+app.run(port='3000', host='0.0.0.0')

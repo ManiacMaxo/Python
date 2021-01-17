@@ -5,12 +5,14 @@ t.speed(0)
 radius = 250
 radius2 = radius/3
 
+
 def drawPetal(t, radius):
     heading = t.heading()
     t.circle(radius, 60)
     t.lt(120)
     t.circle(radius, 60)
     t.setheading(heading)
+
 
 def drawSmallPetal(t, radius):
     heading = t.heading()
@@ -22,6 +24,7 @@ def drawSmallPetal(t, radius):
     t.lt(120)
     t.circle(radius, 65)
     t.setheading(heading)
+
 
 t.pencolor("green")
 for _ in range(12):

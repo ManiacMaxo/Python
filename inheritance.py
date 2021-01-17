@@ -46,7 +46,7 @@ class Person:
     def address(self):
         return self.__address
 
-    @address.smetter
+    @address.setter
     def address(self, value):
         self.__address = value
 
